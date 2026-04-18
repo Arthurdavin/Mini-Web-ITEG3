@@ -1,157 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore Cambodia | Ancient Temples & Tropical Adventures</title>
-    <meta name="description" content="Discover the magic of Cambodia with Explore Cambodia. Book tours to Angkor Wat, Phnom Penh, Koh Rong, and more with expert local guides." />
-    <meta name="keywords" content="Cambodia tourism, Angkor Wat tours, Siem Reap travel, Cambodia beach holidays, Phnom Penh guide" />
-    <link rel="canonical" href="https://yourdomain.com/" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Cambodia | Ancient Temples & Tropical Adventures</title>
+    <meta
+      name="description"
+      content="Discover the magic of Cambodia with Explore Cambodia. Book tours to Angkor Wat, Phnom Penh, Koh Rong, and more with expert local guides."
+    />
+    <meta
+      name="keywords"
+      content="Cambodia tourism, Angkor Wat tours, Siem Reap travel, Cambodia beach holidays, Phnom Penh guide"
+    />
+    <link rel="canonical" href="https://explore-cambodia.vercel.app/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Explore Cambodia | Ancient Temples & Tropical Adventures" />
-    <meta property="og:description" content="Ancient temples, pristine beaches, and unforgettable adventures await you in Cambodia." />
-    <meta property="og:image" content="https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/destinations/160af03f-fd62-4c45-a33f-d7b2167a0c01/resources/5138.jpg" />
+    <meta
+      property="og:title"
+      content="Explore Cambodia | Ancient Temples & Tropical Adventures"
+    />
+    <meta
+      property="og:description"
+      content="Ancient temples, pristine beaches, and unforgettable adventures await you in Cambodia."
+    />
+    <meta
+      property="og:image"
+      content="https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/destinations/160af03f-fd62-4c45-a33f-d7b2167a0c01/resources/5138.jpg"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Explore Cambodia" />
-    <meta name="twitter:description" content="Plan your perfect trip to Cambodia with our expert guides." />
-    <link rel="stylesheet" href="./src/output.css" />
-  <link rel="stylesheet" href="../output.css">
-  <script>
+    <meta
+      name="twitter:description"
+      content="Plan your perfect trip to Cambodia with our expert guides."
+    />
 
-    tailwind.config = { darkMode: 'class' };
-  </script>
-  <style>
+    <link rel="stylesheet" href="../output.css" />
+    <link
+      rel="shortcut icon"
+      href="/assets/Explore-Cambodia.png"
+      type="image/x-icon"
+    />
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <style>
+      .theme-icon-sun {
+        display: block;
+      }
+      .theme-icon-moon {
+        display: none;
+      }
+      .dark .theme-icon-sun {
+        display: none;
+      }
+      .dark .theme-icon-moon {
+        display: block;
+      }
 
-    .theme-icon-sun  { display: block; }
-    .theme-icon-moon { display: none;  }
-    .dark .theme-icon-sun  { display: none;  }
-    .dark .theme-icon-moon { display: block; }
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 500px;
+        opacity: 1;
+      }
 
-    #mobile-menu {
-      transition: max-height 0.35s ease, opacity 0.35s ease;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-    }
-    #mobile-menu.open {
-      max-height: 500px;
-      opacity: 1;
-    }
+      #mobile-menu a {
+        color: #374151;
+      }
+      .dark #mobile-menu a {
+        color: #e5e7eb;
+      }
+      #mobile-menu a:hover {
+        background-color: #fff1f2;
+        color: #dc2626;
+      }
+      .dark #mobile-menu a:hover {
+        background-color: rgba(153, 27, 27, 0.3);
+        color: #f87171;
+      }
+      nav {
+        background-color: #ffffff;
+      }
+      .dark nav {
+        background-color: #1f2937;
+      }
+      /* Reveal animation on scroll */
+      .reveal {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(40px) scale(0.95);
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+        will-change: transform, opacity;
+      }
 
-    #mobile-menu a {
-      color: #374151; 
-    }
-    .dark #mobile-menu a {
-      color: #e5e7eb; 
-    }
-    #mobile-menu a:hover {
-      background-color: #fff1f2; 
-      color: #dc2626; 
-    }
-    .dark #mobile-menu a:hover {
-      background-color: rgba(153, 27, 27, 0.3);
-      color: #f87171; 
-    }
-    nav {
-      background-color: #ffffff;
-    }
-    .dark nav {
-      background-color: #1f2937;
-    }
-    /* Reveal animation on scroll */
-.reveal {
-  opacity: 0;
-  filter: blur(5px);
-  transform: translateY(40px) scale(0.95);
-  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
-  will-change: transform, opacity;
-}
+      /* 2. Visible state */
+      .reveal.active {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+      }
 
-/* 2. Visible state */
-.reveal.active {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0) scale(1);
-}
+      /* 3. Sticky Header Shrink Effect */
+      nav {
+        transition: all 0.4s ease;
+      }
+      nav.shrunk {
+        height: 64px; /* Force a smaller height on scroll */
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+      .dark nav.shrunk {
+        background-color: rgba(31, 41, 55, 0.95);
+      }
 
-/* 3. Sticky Header Shrink Effect */
-nav {
-  transition: all 0.4s ease;
-}
-nav.shrunk {
-  height: 64px; /* Force a smaller height on scroll */
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-}
-.dark nav.shrunk {
-  background-color: rgba(31, 41, 55, 0.95);
-}
-
-/* Image Zoom effect for Tour Cards */
-.tour-img {
-  transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.group:hover .tour-img {
-  transform: scale(1.1);
-}
-  </style>
-  <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
-
-  <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+      /* Image Zoom effect for Tour Cards */
+      .tour-img {
+        transition: transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .group:hover .tour-img {
+        transform: scale(1.1);
+      }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300"
+  >
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16 md:h-20 lg:h-24">
+        <div class="flex justify-between items-center h-16 md:h-28 lg:h-28">
           <a
-            href="/index.html"
-            class="flex items-center space-x-2 shrink-0 group"
-            aria-label="Explore Cambodia homepage"
+            href="./index.html"
+            class="flex items-center shrink-0 group transition-transform duration-200 hover:scale-105"
+            aria-label="Home"
           >
-            <div
-              class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-red-600 to-yellow-500 rounded-lg flex items-center justify-center shadow-sm transition-transform group-hover:scale-105 duration-200"
-            >
-              <span class="text-white font-bold text-xl sm:text-2xl">EC</span>
-            </div>
-            <div class="hidden sm:block">
-              <h1
-                class="font-extrabold text-gray-900 dark:text-white leading-tight text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight"
-              >
-                Explore Cambodia
-              </h1>
-            </div>
+            <img
+              src="/assets/Explore-Cambodia.png"
+              alt="Explore Cambodia Logo"
+              class="block h-10 w-auto md:h-22"
+            />
           </a>
 
           <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
             <a
               href="/index.html"
-              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px] focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
               >Home</a
             >
             <a
               href="./destinations.html"
-              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px] focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
               >Destinations</a
             >
             <a
               href="./tours.html"
-              class="text-red-700 dark:text-red-500 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              class="text-red-700 dark:text-red-500 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px] focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
               >Tours</a
             >
             <a
               href="./galleries.html"
-              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px] focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
               >Gallery</a
             >
             <a
               href="./about-us.html"
-              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px] focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
               >About Us</a
             >
             <a
               href="./contact-us.html"
-              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px] focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
               >Contact</a
             >
 
@@ -303,109 +328,258 @@ nav.shrunk {
         </div>
       </div>
     </nav>
-  <section class="reveal py-16 bg-gradient-to-r from-red-600 to-yellow-500 dark:from-red-700 dark:to-yellow-600 text-white transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section
+      class="reveal py-16 bg-gradient-to-r from-red-600 to-yellow-500 dark:from-red-700 dark:to-yellow-600 text-white transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl font-bold mb-4">Our Tours & Experiences</h1>
         <p class="text-xl max-w-3xl mx-auto text-red-50">
-            Carefully crafted journeys designed to showcase the best of Cambodia
+          Carefully crafted journeys designed to showcase the best of Cambodia
         </p>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="reveal py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id="tours-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
-    </div>
-</section>
+    <section
+      class="reveal py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="tours-grid"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        ></div>
+      </div>
+    </section>
 
-<section class="reveal py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-            Why Book Your Tour With Us?
+    <section
+      class="reveal py-16 bg-white dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+        >
+          Why Book Your Tour With Us?
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div>
-                <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="dollar-sign" class="text-red-600 dark:text-red-400 w-8 h-8"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 dark:text-white">Best Price Guarantee</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-[20px]">Competitive prices with no hidden fees</p>
+          <div>
+            <div
+              class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                data-lucide="dollar-sign"
+                class="text-red-600 dark:text-red-400 w-8 h-8"
+              ></i>
             </div>
-            <div>
-                <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="users" class="text-yellow-600 dark:text-yellow-400 w-8 h-8"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 dark:text-white">Small Groups</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-[20px]">Intimate experiences with personal attention</p>
+            <h3 class="font-bold text-lg mb-2 dark:text-white">
+              Best Price Guarantee
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-[20px]">
+              Competitive prices with no hidden fees
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                data-lucide="users"
+                class="text-yellow-600 dark:text-yellow-400 w-8 h-8"
+              ></i>
             </div>
-            <div>
-                <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="star" class="text-red-600 dark:text-red-400 w-8 h-8"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 dark:text-white">Expert Guides</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-[20px]">Local guides with deep knowledge</p>
+            <h3 class="font-bold text-lg mb-2 dark:text-white">Small Groups</h3>
+            <p class="text-gray-600 dark:text-gray-400 text-[20px]">
+              Intimate experiences with personal attention
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                data-lucide="star"
+                class="text-red-600 dark:text-red-400 w-8 h-8"
+              ></i>
             </div>
-            <div>
-                <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i data-lucide="clock" class="text-yellow-600 dark:text-yellow-400 w-8 h-8"></i>
-                </div>
-                <h3 class="font-bold text-lg mb-2 dark:text-white">Flexible Booking</h3>
-                <p class="text-gray-600 dark:text-gray-400 text-[20px]">Free cancellation up to 24 hours</p>
+            <h3 class="font-bold text-lg mb-2 dark:text-white">
+              Expert Guides
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-[20px]">
+              Local guides with deep knowledge
+            </p>
+          </div>
+          <div>
+            <div
+              class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i
+                data-lucide="clock"
+                class="text-yellow-600 dark:text-yellow-400 w-8 h-8"
+              ></i>
             </div>
+            <h3 class="font-bold text-lg mb-2 dark:text-white">
+              Flexible Booking
+            </h3>
+            <p class="text-gray-600 dark:text-gray-400 text-[20px]">
+              Free cancellation up to 24 hours
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class="reveal py-16 bg-gradient-to-r from-red-50 to-yellow-50 dark:from-gray-900 dark:to-gray-800 border-y border-red-100 dark:border-gray-700 transition-colors duration-300">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl font-bold mb-4 dark:text-white">Need a Custom Tour Package?</h2>
+    <section
+      class="reveal py-16 bg-gradient-to-r from-red-50 to-yellow-50 dark:from-gray-900 dark:to-gray-800 border-y border-red-100 dark:border-gray-700 transition-colors duration-300"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-4 dark:text-white">
+          Need a Custom Tour Package?
+        </h2>
         <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            We can create a personalized itinerary tailored to your interests and budget
+          We can create a personalized itinerary tailored to your interests and
+          budget
         </p>
-        <a href="/contact" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:scale-105 shadow-md">
-            Contact Us for Custom Tour
+        <a
+          href="/contact"
+          class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:scale-105 shadow-md"
+        >
+          Contact Us for Custom Tour
         </a>
-    </div>
-</section>
+      </div>
+    </section>
 
     <div id="footer"></div>
     <script src="../include.js"></script>
     <script>
-        const tours = [
-            { id: 1, title: "Angkor Wat Sunrise Tour", duration: "1 Day", price: "$45", groupSize: "2-15 people", rating: 4.9, reviews: 342, location: "Siem Reap", image: "https://images.unsplash.com/photo-1551155674-6d39c2140d6d?q=80&w=1080", description: "Experience the breathtaking sunrise at Angkor Wat, then explore the ancient temples including Ta Prohm and Bayon.", highlights: ["Sunrise at Angkor Wat", "Ta Prohm Temple", "Bayon Temple"] },
-            { id: 2, title: "Phnom Penh City Discovery", duration: "1 Day", price: "$35", groupSize: "2-12 people", rating: 4.7, reviews: 215, location: "Phnom Penh", image: "https://images.unsplash.com/photo-1715874690160-3bc8acfc2fc5?q=80&w=1080", description: "Discover the capital's highlights including the Royal Palace, Silver Pagoda, and National Museum.", highlights: ["Royal Palace", "Silver Pagoda", "National Museum"] },
-            { id: 3, title: "Island Paradise Escape", duration: "3 Days / 2 Nights", price: "$199", groupSize: "2-10 people", rating: 5.0, reviews: 189, location: "Koh Rong", image: "https://images.unsplash.com/photo-1595781723824-9213a40e3257?q=80&w=1080", description: "Relax on pristine beaches, snorkel in crystal-clear waters, and witness bioluminescent plankton.", highlights: ["Beach relaxation", "Snorkeling", "Night swimming"] },
-            { id: 4, title: "Kampot Countryside Adventure", duration: "2 Days / 1 Night", price: "$89", groupSize: "2-8 people", rating: 4.8, reviews: 156, location: "Kampot", image: "https://images.unsplash.com/photo-1720720581899-20e816236cb8?q=80&w=1080", description: "Visit pepper plantations, explore Bokor National Park, and kayak along the scenic river.", highlights: ["Pepper farm tour", "Bokor Hill Station", "River kayaking"] },
-            { id: 5, title: "Ancient Temples Explorer", duration: "3 Days / 2 Nights", price: "$145", groupSize: "2-15 people", rating: 4.9, reviews: 287, location: "Siem Reap", image: "https://images.unsplash.com/photo-1678709221434-47d318087c1d?q=80&w=1080", description: "In-depth exploration of Angkor Archaeological Park with an expert archaeologist guide.", highlights: ["15+ temples", "Expert guide", "Photography sessions"] },
-            { id: 6, title: "Cambodian Culture Immersion", duration: "5 Days / 4 Nights", price: "$399", groupSize: "2-12 people", rating: 5.0, reviews: 98, location: "Multiple Cities", image: "https://images.unsplash.com/photo-1711511134416-4bf20329cdde?q=80&w=1080", description: "Comprehensive cultural tour covering Siem Reap and Phnom Penh. Cooking classes and traditional dance.", highlights: ["Cooking class", "Dance performance", "Village tour"] }
-        ];
+      const tours = [
+        {
+          id: 1,
+          title: "Angkor Wat Sunrise Tour",
+          duration: "1 Day",
+          price: "$45",
+          groupSize: "2-15 people",
+          rating: 4.9,
+          reviews: 342,
+          location: "Siem Reap",
+          image:
+            "https://images.unsplash.com/photo-1551155674-6d39c2140d6d?q=80&w=1080",
+          description:
+            "Experience the breathtaking sunrise at Angkor Wat, then explore the ancient temples including Ta Prohm and Bayon.",
+          highlights: [
+            "Sunrise at Angkor Wat",
+            "Ta Prohm Temple",
+            "Bayon Temple",
+          ],
+        },
+        {
+          id: 2,
+          title: "Phnom Penh City Discovery",
+          duration: "1 Day",
+          price: "$35",
+          groupSize: "2-12 people",
+          rating: 4.7,
+          reviews: 215,
+          location: "Phnom Penh",
+          image:
+            "https://images.unsplash.com/photo-1715874690160-3bc8acfc2fc5?q=80&w=1080",
+          description:
+            "Discover the capital's highlights including the Royal Palace, Silver Pagoda, and National Museum.",
+          highlights: ["Royal Palace", "Silver Pagoda", "National Museum"],
+        },
+        {
+          id: 3,
+          title: "Island Paradise Escape",
+          duration: "3 Days / 2 Nights",
+          price: "$199",
+          groupSize: "2-10 people",
+          rating: 5.0,
+          reviews: 189,
+          location: "Koh Rong",
+          image:
+            "https://images.unsplash.com/photo-1595781723824-9213a40e3257?q=80&w=1080",
+          description:
+            "Relax on pristine beaches, snorkel in crystal-clear waters, and witness bioluminescent plankton.",
+          highlights: ["Beach relaxation", "Snorkeling", "Night swimming"],
+        },
+        {
+          id: 4,
+          title: "Kampot Countryside Adventure",
+          duration: "2 Days / 1 Night",
+          price: "$89",
+          groupSize: "2-8 people",
+          rating: 4.8,
+          reviews: 156,
+          location: "Kampot",
+          image:
+            "https://images.unsplash.com/photo-1720720581899-20e816236cb8?q=80&w=1080",
+          description:
+            "Visit pepper plantations, explore Bokor National Park, and kayak along the scenic river.",
+          highlights: [
+            "Pepper farm tour",
+            "Bokor Hill Station",
+            "River kayaking",
+          ],
+        },
+        {
+          id: 5,
+          title: "Ancient Temples Explorer",
+          duration: "3 Days / 2 Nights",
+          price: "$145",
+          groupSize: "2-15 people",
+          rating: 4.9,
+          reviews: 287,
+          location: "Siem Reap",
+          image:
+            "https://images.unsplash.com/photo-1678709221434-47d318087c1d?q=80&w=1080",
+          description:
+            "In-depth exploration of Angkor Archaeological Park with an expert archaeologist guide.",
+          highlights: ["15+ temples", "Expert guide", "Photography sessions"],
+        },
+        {
+          id: 6,
+          title: "Cambodian Culture Immersion",
+          duration: "5 Days / 4 Nights",
+          price: "$399",
+          groupSize: "2-12 people",
+          rating: 5.0,
+          reviews: 98,
+          location: "Multiple Cities",
+          image:
+            "https://images.unsplash.com/photo-1711511134416-4bf20329cdde?q=80&w=1080",
+          description:
+            "Comprehensive cultural tour covering Siem Reap and Phnom Penh. Cooking classes and traditional dance.",
+          highlights: ["Cooking class", "Dance performance", "Village tour"],
+        },
+      ];
 
-        const grid = document.getElementById('tours-grid');
+      const grid = document.getElementById("tours-grid");
 
-        function initScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
+      function initScrollAnimations() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Navbar effect
+        window.addEventListener("scroll", () => {
+          const nav = document.querySelector("nav");
+          if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
         });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    
-    // Navbar effect
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
-    });
-}
-        tours.forEach(tour => {
-            const card = `
+      }
+      tours.forEach((tour) => {
+        const card = `
     <div class="reveal group bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-transparent dark:border-gray-700">
         <div class="relative h-56 overflow-hidden">
             <img src="${tour.image}" alt="${tour.title}" class="w-full h-full object-cover">
@@ -427,11 +601,15 @@ nav.shrunk {
             <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">${tour.description}</p>
             
             <div class="mb-4 flex flex-wrap gap-2">
-                ${tour.highlights.map(h => `
+                ${tour.highlights
+                  .map(
+                    (h) => `
                     <span class="bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 px-2 py-1 rounded text-xs">
                         ${h}
                     </span>
-                `).join('')}
+                `,
+                  )
+                  .join("")}
             </div>
 
             <div class="space-y-2 mb-4 text-gray-600 dark:text-gray-400">
@@ -459,90 +637,99 @@ nav.shrunk {
         </div>
     </div>
 `;
-            grid.innerHTML += card;
-        });
-
-        // Initialize Lucide Icons
-        initScrollAnimations();
-        lucide.createIcons();
-    </script>
-  <script>
-
-    const html = document.documentElement;
-
-
-    if (localStorage.getItem('theme') === 'dark') {
-      html.classList.add('dark');
-    }
-
-    function toggleDark() {
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    document.getElementById('darkModeToggleDesktop').addEventListener('click', toggleDark);
-    document.getElementById('darkModeToggleMobile').addEventListener('click', toggleDark);
-
-    const menuBtn    = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon   = document.getElementById('menu-icon');
-    const closeIcon  = document.getElementById('close-icon');
-
-    let menuOpen = false;
-
-    menuBtn.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-
-      mobileMenu.classList.toggle('open', menuOpen);
-
-      menuIcon.classList.toggle('hidden', menuOpen);
-      closeIcon.classList.toggle('hidden', !menuOpen);
-
-      menuBtn.setAttribute('aria-expanded', String(menuOpen));
-    });
-
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuOpen = false;
-        mobileMenu.classList.remove('open');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
+        grid.innerHTML += card;
       });
-    });
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768 && menuOpen) {
-        menuOpen = false;
-        mobileMenu.classList.remove('open');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
+      // Initialize Lucide Icons
+      initScrollAnimations();
+      lucide.createIcons();
+    </script>
+    <script>
+      const html = document.documentElement;
+
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
       }
-    });
 
-    function initScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
+      function toggleDark() {
+        html.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          html.classList.contains("dark") ? "dark" : "light",
+        );
+      }
+
+      document
+        .getElementById("darkModeToggleDesktop")
+        .addEventListener("click", toggleDark);
+      document
+        .getElementById("darkModeToggleMobile")
+        .addEventListener("click", toggleDark);
+
+      const menuBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+
+      let menuOpen = false;
+
+      menuBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+
+        mobileMenu.classList.toggle("open", menuOpen);
+
+        menuIcon.classList.toggle("hidden", menuOpen);
+        closeIcon.classList.toggle("hidden", !menuOpen);
+
+        menuBtn.setAttribute("aria-expanded", String(menuOpen));
+      });
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
         });
-    }, { threshold: 0.1 });
+      });
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    
-    // Navbar effect
-    window.addEventListener('scroll', () => {
-        const nav = document.querySelector('nav');
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768 && menuOpen) {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
         }
-    });
-}
-  </script>
+      });
 
-</body>
+      function initScrollAnimations() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(".reveal")
+          .forEach((el) => observer.observe(el));
+
+        // Navbar effect
+        window.addEventListener("scroll", () => {
+          const nav = document.querySelector("nav");
+          if (window.scrollY > 50) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
+        });
+      }
+    </script>
+  </body>
 </html>

@@ -1,217 +1,353 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore Cambodia | Ancient Temples & Tropical Adventures</title>
-    <meta name="description" content="Discover the magic of Cambodia with Explore Cambodia. Book tours to Angkor Wat, Phnom Penh, Koh Rong, and more with expert local guides." />
-    <meta name="keywords" content="Cambodia tourism, Angkor Wat tours, Siem Reap travel, Cambodia beach holidays, Phnom Penh guide" />
-    <link rel="canonical" href="https://yourdomain.com/" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Cambodia | Ancient Temples & Tropical Adventures</title>
+    <meta
+      name="description"
+      content="Discover the magic of Cambodia with Explore Cambodia. Book tours to Angkor Wat, Phnom Penh, Koh Rong, and more with expert local guides."
+    />
+    <meta
+      name="keywords"
+      content="Cambodia tourism, Angkor Wat tours, Siem Reap travel, Cambodia beach holidays, Phnom Penh guide"
+    />
+    <link rel="canonical" href="https://explore-cambodia.vercel.app/" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Explore Cambodia | Ancient Temples & Tropical Adventures" />
-    <meta property="og:description" content="Ancient temples, pristine beaches, and unforgettable adventures await you in Cambodia." />
-    <meta property="og:image" content="https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/destinations/160af03f-fd62-4c45-a33f-d7b2167a0c01/resources/5138.jpg" />
+    <meta
+      property="og:title"
+      content="Explore Cambodia | Ancient Temples & Tropical Adventures"
+    />
+    <meta
+      property="og:description"
+      content="Ancient temples, pristine beaches, and unforgettable adventures await you in Cambodia."
+    />
+    <meta
+      property="og:image"
+      content="https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/destinations/160af03f-fd62-4c45-a33f-d7b2167a0c01/resources/5138.jpg"
+    />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Explore Cambodia" />
-    <meta name="twitter:description" content="Plan your perfect trip to Cambodia with our expert guides." />
-    <link rel="stylesheet" href="./src/output.css" />
+    <meta
+      name="twitter:description"
+      content="Plan your perfect trip to Cambodia with our expert guides."
+    />
+
     <script src="https://unpkg.com/lucide@latest"></script>
-  <script>
-
-    tailwind.config = { darkMode: 'class' };
-  </script>
-  <style>
-
-    .theme-icon-sun  { display: block; }
-    .theme-icon-moon { display: none;  }
-    .dark .theme-icon-sun  { display: none;  }
-    .dark .theme-icon-moon { display: block; }
-
-    #mobile-menu {
-      transition: max-height 0.35s ease, opacity 0.35s ease;
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-    }
-    #mobile-menu.open {
-      max-height: 500px;
-      opacity: 1;
-    }
-
-    #mobile-menu a {
-      color: #374151; 
-    }
-    .dark #mobile-menu a {
-      color: #e5e7eb; 
-    }
-    #mobile-menu a:hover {
-      background-color: #fff1f2; 
-      color: #dc2626; 
-    }
-    .dark #mobile-menu a:hover {
-      background-color: rgba(153, 27, 27, 0.3);
-      color: #f87171; 
-    }
-    nav {
-      background-color: #ffffff;
-    }
-    .dark nav {
-      background-color: #1f2937;
-    }
-  </style>
-</head>
-<body class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
-
-  <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16 md:h-20 lg:h-24">
-
-
-        <a href="/" class="flex items-center space-x-2 shrink-0 group" aria-label="Explore Cambodia homepage">
-          <div class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-red-600 to-yellow-500 rounded-lg flex items-center justify-center shadow-sm transition-transform group-hover:scale-105 duration-200">
-            <span class="text-white font-bold text-xl sm:text-2xl">EC</span>
-          </div>
-          <div class="hidden sm:block">
-            <h1 class="font-extrabold text-gray-900 dark:text-white leading-tight text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight">
-              Explore Cambodia
-            </h1>
-          </div>
-        </a>
-
-        <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-          <a href="/" class="active:bg-red-700 text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1">Home</a>
-          <a href="/destinations" class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1">Destinations</a>
-          <a href="/tours" class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1">Tours</a>
-          <a href="/gallery" class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1">Gallery</a>
-          <a href="/about" class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1">About Us</a>
-          <a href="/contact" class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1">Contact</a>
-
-          <button
-            id="darkModeToggleDesktop"
-            class="p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            <svg class="theme-icon-sun h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-            <svg class="theme-icon-moon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-          </button>
-        </div>
-
-
-        <div class="flex items-center space-x-2 md:hidden">
-
-
-          <button
-            id="darkModeToggleMobile"
-            class="p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
-            aria-label="Toggle dark mode"
-          >
-            <svg class="theme-icon-sun h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-            <svg class="theme-icon-moon h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-            </svg>
-          </button>
-
-
-          <button
-            id="mobile-menu-button"
-            type="button"
-            class="flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
-            aria-label="Toggle menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu"
-          >
-            <svg id="menu-icon" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-            <svg id="close-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-      </div>
-      <div
-        id="mobile-menu"
-        class="md:hidden border-t border-gray-100 dark:border-gray-700"
-        role="navigation"
-        aria-label="Mobile navigation"
-      >
-        <div class="py-3 space-y-1 px-2 pb-4">
-          <a href="/index.html" class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200">Home</a>
-          <a href="../pages/destinations.html" class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200">Destinations</a>
-          <a href="/tours" class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200">Tours</a>
-          <a href="/gallery" class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200">Gallery</a>
-          <a href="/about" class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200">About Us</a>
-          <a href="/contact" class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200">Contact</a>
-        </div>
-      </div>
-
-    </div>
-  </nav>
-  
-  <script>
-
-    const html = document.documentElement;
-
-
-    if (localStorage.getItem('theme') === 'dark') {
-      html.classList.add('dark');
-    }
-
-    function toggleDark() {
-      html.classList.toggle('dark');
-      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-    }
-
-    document.getElementById('darkModeToggleDesktop').addEventListener('click', toggleDark);
-    document.getElementById('darkModeToggleMobile').addEventListener('click', toggleDark);
-
-    const menuBtn    = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon   = document.getElementById('menu-icon');
-    const closeIcon  = document.getElementById('close-icon');
-
-    let menuOpen = false;
-
-    menuBtn.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-
-      mobileMenu.classList.toggle('open', menuOpen);
-
-      menuIcon.classList.toggle('hidden', menuOpen);
-      closeIcon.classList.toggle('hidden', !menuOpen);
-
-      menuBtn.setAttribute('aria-expanded', String(menuOpen));
-    });
-
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuOpen = false;
-        mobileMenu.classList.remove('open');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768 && menuOpen) {
-        menuOpen = false;
-        mobileMenu.classList.remove('open');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-        menuBtn.setAttribute('aria-expanded', 'false');
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="shortcut icon" href="/assets/Explore-Cambodia.png" type="image/x-icon">
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <style>
+      .theme-icon-sun {
+        display: block;
       }
-    });
-  </script>
+      .theme-icon-moon {
+        display: none;
+      }
+      .dark .theme-icon-sun {
+        display: none;
+      }
+      .dark .theme-icon-moon {
+        display: block;
+      }
 
-</body>
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      #mobile-menu a {
+        color: #374151;
+      }
+      .dark #mobile-menu a {
+        color: #e5e7eb;
+      }
+      #mobile-menu a:hover {
+        background-color: #fff1f2;
+        color: #dc2626;
+      }
+      .dark #mobile-menu a:hover {
+        background-color: rgba(153, 27, 27, 0.3);
+        color: #f87171;
+      }
+      nav {
+        background-color: #ffffff;
+      }
+      .dark nav {
+        background-color: #1f2937;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300"
+  >
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 md:h-28 lg:h-28">
+          <a
+            href="./index.html"
+            class="flex items-center shrink-0 group transition-transform duration-200 hover:scale-105"
+            aria-label="Home"
+          >
+            <img
+              src="/assets/Explore-Cambodia.png"
+              alt="Explore Cambodia Logo"
+              class="block h-10 w-auto md:h-22"
+            />
+          </a>
+
+          <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a
+              href="/"
+              class="active:bg-red-700 text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Home</a
+            >
+            <a
+              href="/destinations"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Destinations</a
+            >
+            <a
+              href="/tours"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Tours</a
+            >
+            <a
+              href="/gallery"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Gallery</a
+            >
+            <a
+              href="/about"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >About Us</a
+            >
+            <a
+              href="/contact"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-sm lg:text-base xl:text-lg focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Contact</a
+            >
+
+            <button
+              id="darkModeToggleDesktop"
+              class="p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <svg
+                class="theme-icon-sun h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <svg
+                class="theme-icon-moon h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex items-center space-x-2 md:hidden">
+            <button
+              id="darkModeToggleMobile"
+              class="p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <svg
+                class="theme-icon-sun h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <svg
+                class="theme-icon-moon h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </button>
+
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <svg
+                id="menu-icon"
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                id="close-icon"
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="mobile-menu"
+          class="md:hidden border-t border-gray-100 dark:border-gray-700"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
+          <div class="py-3 space-y-1 px-2 pb-4">
+            <a
+              href="/index.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Home</a
+            >
+            <a
+              href="../pages/destinations.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Destinations</a
+            >
+            <a
+              href="/tours"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Tours</a
+            >
+            <a
+              href="/gallery"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Gallery</a
+            >
+            <a
+              href="/about"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >About Us</a
+            >
+            <a
+              href="/contact"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const html = document.documentElement;
+
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+      }
+
+      function toggleDark() {
+        html.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          html.classList.contains("dark") ? "dark" : "light",
+        );
+      }
+
+      document
+        .getElementById("darkModeToggleDesktop")
+        .addEventListener("click", toggleDark);
+      document
+        .getElementById("darkModeToggleMobile")
+        .addEventListener("click", toggleDark);
+
+      const menuBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+
+      let menuOpen = false;
+
+      menuBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+
+        mobileMenu.classList.toggle("open", menuOpen);
+
+        menuIcon.classList.toggle("hidden", menuOpen);
+        closeIcon.classList.toggle("hidden", !menuOpen);
+
+        menuBtn.setAttribute("aria-expanded", String(menuOpen));
+      });
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768 && menuOpen) {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+  </body>
 </html>
