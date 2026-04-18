@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explore Cambodia | Ancient Temples & Tropical Adventures</title>
+    <meta name="description" content="Discover the magic of Cambodia with Explore Cambodia. Book tours to Angkor Wat, Phnom Penh, Koh Rong, and more with expert local guides." />
+    <meta name="keywords" content="Cambodia tourism, Angkor Wat tours, Siem Reap travel, Cambodia beach holidays, Phnom Penh guide" />
+    <link rel="canonical" href="https://yourdomain.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Explore Cambodia | Ancient Temples & Tropical Adventures" />
+    <meta property="og:description" content="Ancient temples, pristine beaches, and unforgettable adventures await you in Cambodia." />
+    <meta property="og:image" content="https://d37rmf1ynyg9aw.cloudfront.net/fit-in/1280x1280/data/v4/destinations/160af03f-fd62-4c45-a33f-d7b2167a0c01/resources/5138.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Explore Cambodia" />
+    <meta name="twitter:description" content="Plan your perfect trip to Cambodia with our expert guides." />
+    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="../output.css" />
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <style>
+      .theme-icon-sun {
+        display: block;
+      }
+      .theme-icon-moon {
+        display: none;
+      }
+      .dark .theme-icon-sun {
+        display: none;
+      }
+      .dark .theme-icon-moon {
+        display: block;
+      }
+
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 500px;
+        opacity: 1;
+      }
+
+      #mobile-menu a {
+        color: #374151;
+      }
+      .dark #mobile-menu a {
+        color: #e5e7eb;
+      }
+      #mobile-menu a:hover {
+        background-color: #fff1f2;
+        color: #dc2626;
+      }
+      .dark #mobile-menu a:hover {
+        background-color: rgba(153, 27, 27, 0.3);
+        color: #f87171;
+      }
+      nav {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      nav.scrolled {
+        height: 90px; /* Slimmer look */
+        background-color: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(15px) saturate(180%);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .dark nav.scrolled {
+        background-color: rgba(17, 24, 39, 0.75) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .sticky-tabs {
+        top: 0;
+        transition: all 0.3s ease;
+      }
+      /* Animation Base */
+      .gallery-item {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+        transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .gallery-item.show {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      /* Staggered transition delays for a waves effect */
+      .gallery-item:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .gallery-item:nth-child(2) {
+        transition-delay: 0.15s;
+      }
+      .gallery-item:nth-child(3) {
+        transition-delay: 0.2s;
+      }
+      .gallery-item:nth-child(4) {
+        transition-delay: 0.25s;
+      }
+
+      /* Better Lightbox transition */
+      #lightbox {
+        transition:
+          opacity 0.4s ease,
+          visibility 0.4s;
+        backdrop-filter: blur(8px);
+      }
+
+      #lightbox.hidden {
+        display: none;
+        opacity: 0;
+      }
+
+      #lightbox.flex {
+        display: flex;
+        opacity: 1;
+      }
+      .reveal {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(40px) scale(0.95);
+        transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+        will-change: transform, opacity;
+      }
+
+      /* 2. Visible state */
+      .reveal.active {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+      }
+    </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body
+    class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300"
+  >
+    <nav class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16 md:h-20 lg:h-24">
+          <a
+            href="/index.html"
+            class="flex items-center space-x-2 shrink-0 group"
+            aria-label="Explore Cambodia homepage"
+          >
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 bg-gradient-to-br from-red-600 to-yellow-500 rounded-lg flex items-center justify-center shadow-sm transition-transform group-hover:scale-105 duration-200"
+            >
+              <span class="text-white font-bold text-xl sm:text-2xl">EC</span>
+            </div>
+            <div class="hidden sm:block">
+              <h1
+                class="font-extrabold text-gray-900 dark:text-white leading-tight text-lg sm:text-xl md:text-2xl lg:text-3xl tracking-tight"
+              >
+                Explore Cambodia
+              </h1>
+            </div>
+          </a>
+
+          <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a
+              href="/index.html"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Home</a
+            >
+            <a
+              href="./destinations.html"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Destinations</a
+            >
+            <a
+              href="./tours.html"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Tours</a
+            >
+            <a
+              href="./galleries.html"
+              class="text-red-700 dark:text-red-500 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Gallery</a
+            >
+            <a
+              href="./about-us.html"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >About Us</a
+            >
+            <a
+              href="./contact-us.html"
+              class="text-gray-700 dark:text-gray-200 hover:text-red-600 dark:hover:text-red-400 font-semibold transition-colors duration-200 text-[20px]  focus:outline-none focus:ring-2 focus:ring-red-400 rounded-md px-1 py-1"
+              >Contact</a
+            >
+
+            <button
+              id="darkModeToggleDesktop"
+              class="p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <svg
+                class="theme-icon-sun h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <svg
+                class="theme-icon-moon h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex items-center space-x-2 md:hidden">
+            <button
+              id="darkModeToggleMobile"
+              class="p-2 rounded-full text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+              aria-label="Toggle dark mode"
+            >
+              <svg
+                class="theme-icon-sun h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                />
+              </svg>
+              <svg
+                class="theme-icon-moon h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                />
+              </svg>
+            </button>
+
+            <button
+              id="mobile-menu-button"
+              type="button"
+              class="flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <svg
+                id="menu-icon"
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+              <svg
+                id="close-icon"
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div
+          id="mobile-menu"
+          class="md:hidden border-t border-gray-100 dark:border-gray-700"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
+          <div class="py-3 space-y-1 px-2 pb-4">
+            <a
+              href="/index.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Home</a
+            >
+            <a
+              href="./destinations.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Destinations</a
+            >
+            <a
+              href="./tours.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Tours</a
+            >
+            <a
+              href="./galleries.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Gallery</a
+            >
+            <a
+              href="./about-us.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >About Us</a
+            >
+            <a
+              href="./contact-us.html"
+              class="mobile-link block py-3 px-4 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/30 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-all duration-200"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section
+      class="py-16 bg-gradient-to-r from-red-600 to-yellow-500 dark:from-red-700 dark:to-yellow-600 text-white transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl font-bold mb-4">Photo Gallery</h1>
+        <p class="text-xl max-w-3xl mx-auto">
+          Explore the beauty of Cambodia through stunning photography
+        </p>
+      </div>
+    </section>
+
+    <section
+      class=" py-8 bg-white dark:bg-gray-800 sticky top-0 z-40 shadow-sm border-b dark:border-gray-700 transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="filter-container"
+          class="flex flex-wrap justify-center gap-3"
+        ></div>
+      </div>
+    </section>
+
+    <section
+      class="py-12 bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          id="gallery-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+        ></div>
+      </div>
+    </section>
+
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black/95 z-50 hidden items-center justify-center p-4 cursor-pointer"
+    >
+      <button
+        id="close-lightbox"
+        class="absolute top-4 right-4 text-white hover:text-red-500 transition-colors p-2 bg-black/50 rounded-full"
+      >
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <img
+        id="lightbox-img"
+        src=""
+        alt="Full size"
+        class="max-w-full max-h-full object-contain cursor-default"
+      />
+    </div>
+
+    <section
+      class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300"
+    >
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+          Want to Capture Your Own Memories?
+        </h2>
+        <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">
+          Join one of our photography tours led by professional photographers
+        </p>
+        <a
+          href="./tours.html"
+          class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-all hover:scale-105 shadow-md"
+        >
+          View Photography Tours
+        </a>
+      </div>
+    </section>
+    <div id="footer"></div>
+    <script src="../include.js"></script>
+    <script>
+      // IMAGE DATA ARRAY
+      const images = [
+        {
+          id: 1,
+          src: "https://images.unsplash.com/photo-1551155674-6d39c2140d6d?auto=format&fit=crop&q=80&w=1080",
+          title: "Angkor Wat Sunrise",
+          category: "Temples",
+        },
+        {
+          id: 2,
+          src: "https://images.unsplash.com/photo-1699875286327-5f0fb38fb58e?auto=format&fit=crop&q=80&w=1080",
+          title: "Ancient Temple Ruins",
+          category: "Temples",
+        },
+        {
+          id: 3,
+          src: "https://images.unsplash.com/photo-1715874690160-3bc8acfc2fc5?auto=format&fit=crop&q=80&w=1080",
+          title: "Phnom Penh Skyline",
+          category: "Cities",
+        },
+        {
+          id: 4,
+          src: "https://images.unsplash.com/photo-1595781723824-9213a40e3257?auto=format&fit=crop&q=80&w=1080",
+          title: "Koh Rong Beach",
+          category: "Beaches",
+        },
+        {
+          id: 5,
+          src: "https://images.unsplash.com/photo-1720720581899-20e816236cb8?auto=format&fit=crop&q=80&w=1080",
+          title: "Kampot River",
+          category: "Nature",
+        },
+        {
+          id: 6,
+          src: "https://images.unsplash.com/photo-1678709221434-47d318087c1d?auto=format&fit=crop&q=80&w=1080",
+          title: "Temple Architecture",
+          category: "Temples",
+        },
+        {
+          id: 7,
+          src: "https://images.unsplash.com/photo-1776140169112-d994c622ced3?auto=format&fit=crop&q=80&w=1080",
+          title: "Local Street Food",
+          category: "Culture",
+        },
+        {
+          id: 8,
+          src: "https://images.unsplash.com/photo-1711511134416-4bf20329cdde?auto=format&fit=crop&q=80&w=1080",
+          title: "Traditional Dance",
+          category: "Culture",
+        },
+        {
+          id: 9,
+          src: "https://images.unsplash.com/photo-1667118891661-f0d518be9e37?auto=format&fit=crop&q=80&w=1080",
+          title: "Rice Fields",
+          category: "Nature",
+        },
+        {
+          id: 10,
+          src: "https://images.unsplash.com/photo-1704103259506-6c0ca4d6dca4?auto=format&fit=crop&q=80&w=1080",
+          title: "Floating Village",
+          category: "Culture",
+        },
+        {
+          id: 11,
+          src: "https://images.unsplash.com/photo-1773912803269-66284196a596?auto=format&fit=crop&q=80&w=1080",
+          title: "Buddhist Monks",
+          category: "Culture",
+        },
+        {
+          id: 12,
+          src: "https://images.unsplash.com/photo-1610987067595-79f653ceda92?auto=format&fit=crop&q=80&w=1080",
+          title: "Sunset View",
+          category: "Nature",
+        },
+      ];
+
+      const categories = [
+        "All",
+        "Temples",
+        "Beaches",
+        "Culture",
+        "Nature",
+        "Cities",
+      ];
+      let activeCategory = "All";
+
+      const filterContainer = document.getElementById("filter-container");
+      const galleryGrid = document.getElementById("gallery-grid");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      // RENDER FILTERS
+      function renderFilters() {
+        filterContainer.innerHTML = categories
+          .map(
+            (cat) => `
+                <button onclick="filterGallery('${cat}')" 
+                    class="filter-btn px-6 py-2 rounded-full font-semibold transition-all duration-200 
+                    ${activeCategory === cat ? "bg-red-600 text-white shadow-lg scale-105" : "bg-gray-100 text-gray-700 hover:bg-gray-200"}">
+                    ${cat}
+                </button>
+            `,
+          )
+          .join("");
+      }
+
+      // RENDER GALLERY
+      function renderGallery() {
+        const filtered =
+          activeCategory === "All"
+            ? images
+            : images.filter((img) => img.category === activeCategory);
+
+        galleryGrid.innerHTML = filtered
+          .map(
+            (img) => `
+        <div class="gallery-item group relative overflow-hidden rounded-xl shadow-md hover:shadow-2xl cursor-pointer aspect-square"
+             onclick="openLightbox('${img.src}')">
+            <img src="${img.src}" alt="${img.title}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                <h3 class="text-white font-bold text-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">${img.title}</h3>
+                <p class="text-red-400 text-[20px] transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">${img.category}</p>
+            </div>
+        </div>
+    `,
+          )
+          .join("");
+
+        // Re-initialize the scroll trigger after rendering
+        initScrollReveal();
+      }
+
+      function initScrollReveal() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, index) => {
+              if (entry.isIntersecting) {
+                // Small delay based on index for filtering animation feel
+                setTimeout(() => {
+                  entry.target.classList.add("show");
+                }, index * 50);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(".gallery-item")
+          .forEach((item) => observer.observe(item));
+      }
+
+      // FILTER LOGIC
+      window.filterGallery = (cat) => {
+        activeCategory = cat;
+        renderFilters();
+        renderGallery();
+      };
+
+      // LIGHTBOX LOGIC
+      window.openLightbox = (src) => {
+        lightboxImg.src = src;
+        lightboxImg.style.transform = "scale(0.9)";
+        lightboxImg.style.opacity = "0";
+
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+
+        // Trigger zoom-in
+        setTimeout(() => {
+          lightboxImg.style.transition =
+            "all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)";
+          lightboxImg.style.transform = "scale(1)";
+          lightboxImg.style.opacity = "1";
+        }, 10);
+
+        document.body.style.overflow = "hidden";
+      };
+
+      lightbox.onclick = () => {
+        lightboxImg.style.transform = "scale(0.9)";
+        lightboxImg.style.opacity = "0";
+
+        setTimeout(() => {
+          lightbox.classList.replace("flex", "hidden");
+          document.body.style.overflow = "auto";
+        }, 300);
+      };
+
+      // Stop clicks on the image from closing the lightbox
+      lightboxImg.onclick = (e) => e.stopPropagation();
+
+      // INIT
+      renderFilters();
+      renderGallery();
+      lucide.createIcons();
+    </script>
+    <div id="footer"></div>
+    <script src="../include.js"></script>
+    <script>
+      const html = document.documentElement;
+
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+      }
+
+      function toggleDark() {
+        html.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          html.classList.contains("dark") ? "dark" : "light",
+        );
+      }
+
+      document
+        .getElementById("darkModeToggleDesktop")
+        .addEventListener("click", toggleDark);
+      document
+        .getElementById("darkModeToggleMobile")
+        .addEventListener("click", toggleDark);
+
+      const menuBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+      const closeIcon = document.getElementById("close-icon");
+
+      let menuOpen = false;
+
+      menuBtn.addEventListener("click", () => {
+        menuOpen = !menuOpen;
+
+        mobileMenu.classList.toggle("open", menuOpen);
+
+        menuIcon.classList.toggle("hidden", menuOpen);
+        closeIcon.classList.toggle("hidden", !menuOpen);
+
+        menuBtn.setAttribute("aria-expanded", String(menuOpen));
+      });
+
+      document.querySelectorAll(".mobile-link").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768 && menuOpen) {
+          menuOpen = false;
+          mobileMenu.classList.remove("open");
+          menuIcon.classList.remove("hidden");
+          closeIcon.classList.add("hidden");
+          menuBtn.setAttribute("aria-expanded", "false");
+        }
+      });
+    </script>
+  </body>
+</html>
