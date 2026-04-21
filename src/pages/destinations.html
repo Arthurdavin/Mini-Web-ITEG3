@@ -130,6 +130,7 @@
         transform: scale(1.08);
       }
     </style>
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
   <body
     class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300"
@@ -353,29 +354,29 @@
       </div>
     </section>
 
-    <section
-      class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300"
-    >
-      <div class="max-w-4xl mx-auto px-4 [20px]:px-6 lg:px-8 text-center">
-        <div
-          class="bg-gradient-to-r from-red-50 to-yellow-50 dark:from-gray-700 dark:to-gray-750 rounded-2xl p-12 border border-red-100 dark:border-gray-600 transition-all"
-        >
-          <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Can't Decide Where to Go?
-          </h2>
-          <p class="text-xl text-gray-700 dark:text-gray-300 mb-8">
-            Let our expert travel consultants help you plan the perfect Cambodia
-            itinerary
-          </p>
-          <a
-            href="./contact-us.html"
-            class="inline-block bg-red-600 hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200 shadow-md"
-          >
-            Get Free Consultation
-          </a>
+    <section class="py-16 bg-gray-50 dark:bg-gray-950">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="group relative bg-gradient-to-br from-white to-red-50 dark:from-gray-800 dark:to-gray-900 p-1 rounded-[2.5rem] transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/10">
+      <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-500 opacity-0 group-hover:opacity-10 rounded-[2.5rem] transition-opacity blur-xl"></div>
+      
+      <div class="relative bg-white dark:bg-gray-800 rounded-[2.3rem] p-10 md:p-16 text-center border border-white dark:border-gray-700 shadow-sm">
+        <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 text-red-600 dark:text-red-400 rotate-3 group-hover:rotate-0 transition-transform">
+          <i data-lucide="compass" size="32"></i>
         </div>
+        <h2 class="text-4xl font-extrabold mb-4 text-gray-900 dark:text-white tracking-tight">
+          Still Searching for Inspiration?
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Unlock hidden gems and local secrets with a personalized 1-on-1 travel consultation.
+        </p>
+        <a href="./tours.html" 
+           class="inline-flex items-center bg-gray-900 dark:bg-red-600 hover:bg-red-600 dark:hover:bg-red-700 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg active:scale-95">
+          Start Your Plan
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     <div id="footer"></div>
     <script src="../include.js"></script>
     <script>
@@ -633,5 +634,6 @@
         initScrollAnimations();
       });
     </script>
+    
   </body>
 </html>
